@@ -4,7 +4,7 @@ import {
   Then,
 } from "@badeball/cypress-cucumber-preprocessor";
 
-Given("the student visit istqb test page", () => {
+Given("the student is on the ISTQB exam page", () => {
   cy.visit('/');
   cy.clearCookies();
   cy.reload();
