@@ -7,3 +7,9 @@ Given the student is on the ISTQB exam page
 When the student enters the name "Sandra" 
 And press start button
 Then the student should see the message "Hi Sandra, welcome to the test!"
+
+
+Scenario: Enter an empty name
+Given the student is on the ISTQB exam page
+When the student leave empty the name
+Then the student should see the error message "The name cannot be empty"

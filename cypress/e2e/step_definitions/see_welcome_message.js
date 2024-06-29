@@ -16,3 +16,13 @@ When("press start button", () => {
 Then("the student should see the message {string}", (welcomeMessage) => {
     cy.get('[data-cy="welcome-message"]').should('have.text', welcomeMessage);
 });
+
+When("the student leave empty the name", () => {
+    cy.get('[data-cy="button-start"]').click();
+});
+
+Then("the student should see the error message {string}", (errorMessage) => {
+    cy.get('[data-cy="welcome-message"]').should('have.text', errorMessage);
+});
+
+
