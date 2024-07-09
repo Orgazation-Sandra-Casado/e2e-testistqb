@@ -8,12 +8,12 @@ When('the student select answer {string} on question {string}', (selectedAnswer,
     cy.get('[data-cy="question' + questionNumber + '"]').select(selectedAnswer);
 })
 
-When('the student clicks on Correct button on question {string}', (questionNum) => {
-    cy.get('[data-cy="button-correct-question' + questionNum + '"]').click();
+When('the student clicks on Correct button on question {string}', (questionNumber) => {
+    cy.get('[data-cy="button-correct-question' + questionNumber + '"]').click();
 })
 
-Then('the user should see the message {string} on question {string}', (correctMessage, questionNumber) => {
-    cy.get('[data-cy="questioncorrect' + questionNumber + '"]').should('have.text',correctMessage);
+Then('the user should see the message {string} on question {string}', (expectedMessage, questionNumber) => {
+    cy.get('[data-cy="questioncorrect' + questionNumber + '"]').should('have.text',expectedMessage);
 })
 
 

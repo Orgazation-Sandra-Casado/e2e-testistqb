@@ -4,6 +4,18 @@ As student, I want to be able to have a correction button, so that I want to kno
   Scenario: Select a valid answer
     Given the student is on the ISTQB exam page
     When the student select answer "C" on question "1"
-    When the student select answer "A" on question "2"
     And the student clicks on Correct button on question "1"
     Then the user should see the message "Correct! Your score +2" on question "1"
+
+  Scenario Outline: Correct a question
+    Given the student is on the ISTQB exam page
+    When the student select answer <selectedAnswer> on question <questionNumber>
+    And the student clicks on Correct button on question <questionNumber>
+    Then the user should see the message <expectedMessage> on question <questionNumber>
+
+    Examples:
+      | questionNumber | selectedAnswer | expectedMessage          |
+      | "1"            | "C"            | "Correct! Your score +2" |
+      | "1"            | "A"            | "Wrong! -1"              |
+      | "1"            | "B"            | "Wrong! -1"              |
+      | "1"            | "------"       | "Your score 0"           |
