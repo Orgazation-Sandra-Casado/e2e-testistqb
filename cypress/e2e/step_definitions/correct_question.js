@@ -13,8 +13,10 @@ When('the student clicks on Correct button on question {string}', (questionNumbe
 })
 
 Then('the user should see the message {string} on question {string}', (expectedMessage, questionNumber) => {
-    cy.get('[data-cy="questioncorrect' + questionNumber + '"]').should('have.text',expectedMessage);
+    cy.get('[data-cy="questioncorrect' + questionNumber + '"]').should('have.text', expectedMessage);
 })
+
+
 
 
 

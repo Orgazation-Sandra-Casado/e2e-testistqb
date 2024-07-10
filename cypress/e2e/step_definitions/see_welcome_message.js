@@ -22,6 +22,7 @@ Then("the student should see the message {string}", (welcomeMessage) => {
 });
 
 When("the student leave empty the name", () => {
+    cy.get('[data-cy="input-name-welcome"]').clear();
     cy.get('[data-cy="button-start"]').click();
 });
 
